@@ -10,16 +10,12 @@ public class TrapdoorController : MonoBehaviour
 
         private void Awake()
         {
-            // Initialise the hinge variable (saves me having to "wire it
-            // up" via the inspector)
             trapdoorHinge = GetComponent<HingeJoint2D>();
         }
-
-
-        public void SetTrapdoorSpeed(float speedToSet)
+        public void SetTrapdoorSpeed(float trapdoorSpeed)
         {
             JointMotor2D trapdoorMotor = trapdoorHinge.motor;
-            trapdoorMotor.motorSpeed = speedToSet;
+            trapdoorMotor.motorSpeed = trapdoorSpeed;
             trapdoorHinge.motor = trapdoorMotor;
         }
     }
